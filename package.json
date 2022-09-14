@@ -1,0 +1,38 @@
+{
+  "name": "taqueria-scaffold-nft",
+  "description": "- Add your pinataJwtToken     - Create file `./taqueria/.env`     - Get pinata jwt token form your pinata account on the pinata website:         - `https://app.pinata.cloud/signin`     - Add pinata jwt token in file",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "setup": "npm run setup:taqueria && npm run setup:app",
+    "setup:taqueria": "cd ./taqueria && npm install && taq init",
+    "setup:app": "cd ./app && npm install",
+    "start": "npm run build:taqueria && npm run start:app",
+    "build:taqueria": "cd ./taqueria && npm run build",
+    "start:app": "cd ./app && npm run start",
+    "start:local": "npm run start:taqueria:local && npm run start:app",
+    "start:taqueria:local": "cd ./taqueria && npm run start:local",
+    "stop:local": "npm run stop:taqueria:local",
+    "stop:taqueria:local": "cd ./taqueria && npm run stop:local",
+    "plan": "cd ./taqueria && npx ts-node ./provisioning/mock-provisioner-runner.ts --plan",
+    "apply": "cd ./taqueria && npx ts-node ./provisioning/mock-provisioner-runner.ts --apply"
+  },
+  "devDependencies": {
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "acorn": "^8.7.1",
+    "acorn-walk": "^8.2.0",
+    "arg": "^4.1.3",
+    "create-require": "^1.1.1",
+    "diff": "^4.0.2",
+    "make-error": "^1.3.6",
+    "v8-compile-cache-lib": "^3.0.1",
+    "yn": "^3.1.1"
+  }
+}
